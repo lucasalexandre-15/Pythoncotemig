@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    <title>Minha página</title>
+{% endblock %}
+
+{% block hello %}
+    <h1>Hello, World!</h1>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic,  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic,
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic,eligendi qu
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                {% for key in biblioteca[0].keys() %}
+                    <th scope="col">
+                        {{ key }}
+                    </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        {% for livro in biblioteca %}
+            <tbody class="table-group-divider">
+                <tr>
+                    {% for value in livro.values() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}

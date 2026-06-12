@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    <title>Minha Pagina</title>
+{% endblock titulo %}
+
+{% block conteudo %}
+<div>
+    <h1>Esta é a minha página!</h1>
+    <p>Olá, meu nome é {{ nome | capitalize }}</p>
+</div>
+{% endblock %}

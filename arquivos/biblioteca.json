@@ -1,0 +1,24 @@
+[
+    {
+        "ano_publicacao": 2026,
+        "autor": "CARECAO",
+        "editora": "DAVI",
+        "genero": "AMOR E FELIZ",
+        "isbn": "978-8526019644",
+        "localizacao": "Estante A1, Prateleira 3",
+        "paginas": 136,
+        "status": "disponivel",
+        "titulo": "Um homem feliz Carecão"
+    },
+    {
+        "ano_publicacao": 2026,
+        "autor": "JAPA",
+        "editora": "DAVI CESAR",
+        "genero": "ROMANCE",
+        "isbn": "978-8526019622",
+        "localizacao": "Estante A1, Prateleira 3",
+        "paginas": 127,
+        "status": "disponivel",
+        "titulo": "Um homem feliz Carecão"
+    }
+]

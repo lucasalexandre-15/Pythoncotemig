@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block titulo %}
+    <title>Biblioteca</title>
+{% endblock %}
+
+{% block conteudo %}
+<h1 class="display-6">Biblioteca Flask</h1>
+<div class="col-sm-8">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr class="table-dark">
+            {% for key in biblioteca[0].items() %}
+                {% if key[0] == 'isbn' %}
+                    <th>{{ key[0] | upper }}</th>
+                {% else %}
+                    <th>{{ key[0] | replace('_',' ') | capitalize }}</th>
+                {% endif %}
+            {% endfor %}
+            <th></th>
+        </tr>
+    </thead>
+{% for livro in biblioteca %}
+        <tbody>
+            <tr>
+                <td>{{ livro['isbn'] }}</td>
+                <td>{{ livro.titulo }}</td>
+                <td>{{ livro.autor }}</td>
+                <td>{{ livro.genero }}</td>
+                <td>{{ livro.ano_publicacao }}</td>
+                <td>{{ livro.editora }}</td>
+                <td>{{ livro.paginas }}</td>
+                <td>{{ livro['status'] }}</td>
+                <td>{{ livro['localizacao'] }}</td>
+                <td>
+                    <form action="{{  url_for('interface_web', isbn=livro.isbn) }}" method="POST" onsubmit="return confirm('Confirmar exclusão?');" style="display:inline;">
+                        <button type="submit" class="btn-danger">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
